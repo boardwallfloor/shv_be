@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Article - Admin Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #111827; color: #d1d5db; }
+        .sidebar { background-color: #1f2937; }
+        .main-content { background-color: #111827; }
+        .form-input { background-color: #374151; border: 1px solid #4b5563; }
+    </style>
+</head>
+<body class="font-sans">
+
+<div class="flex h-screen">
+    <aside class="w-48 sidebar p-4">
+        <h1 class="text-xl font-bold text-white mb-6">Admin Panel</h1>
+        <nav class="flex flex-col space-y-2">
+            <a href="all-posts.html" class="hover:bg-gray-700 rounded-md p-2">All Posts</a>
+            <a href="#" class="bg-gray-700 text-white rounded-md p-2">Add New</a>
+            <a href="preview.html" class="hover:bg-gray-700 rounded-md p-2">Preview Blog</a>
+        </nav>
+    </aside>
+
+    <main class="flex-1 p-6 main-content">
+        <h2 class="text-2xl font-bold text-white mb-6">Add New Article</h2>
+        
+        <form action="#" method="POST" class="space-y-6">
+            <div>
+                <label for="title" class="block text-sm font-medium mb-1">Title</label>
+                <input type="text" name="title" id="title" class="w-full rounded-md p-2 form-input focus:ring-blue-500 focus:border-blue-500" placeholder="Masukkan judul artikel">
+            </div>
+
+            <div>
+                <label for="content" class="block text-sm font-medium mb-1">Content</label>
+                <textarea name="content" id="content" rows="10" class="w-full rounded-md p-2 form-input focus:ring-blue-500 focus:border-blue-500" placeholder="Tulis konten artikel di sini..."></textarea>
+            </div>
+
+            <div>
+                <label for="category" class="block text-sm font-medium mb-1">Category</label>
+                <select name="category" id="category" class="w-full rounded-md p-2 form-input focus:ring-blue-500 focus:border-blue-500">
+                    <option>Pilih Kategori</option>
+                    <option>Teknologi</option>
+                    <option>Kuliner</option>
+                    <option>Gaya Hidup</option>
+                </select>
+            </div>
+
+            <div class="flex items-center justify-end space-x-4">
+                 <button type="submit" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+                    Save as Draft
+                </button>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Publish
+                </button>
+            </div>
+        </form>
+    </main>
+</div>
+
+</body>
+</html>

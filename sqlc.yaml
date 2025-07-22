@@ -1,0 +1,31 @@
+version: "2"
+sql:
+  - engine: "mysql"
+    queries: "sqlc/query.sql"
+    schema: "sqlc/schema.sql"
+    gen:
+      go:
+        package: "queries"
+        out: "internal/db"
+        emit_json_tags: true
+        overrides:
+          - db_type: "varchar"
+            nullable: true
+            go_type:
+              import: "gopkg.in/guregu/null.v4"
+              type: "String"
+          - db_type: "text"
+            nullable: true
+            go_type:
+              import: "gopkg.in/guregu/null.v4"
+              type: "String"
+          - db_type: "timestamp"
+            nullable: true
+            go_type:
+              import: "gopkg.in/guregu/null.v4"
+              type: "Time"
+          - db_type: "datetime" # Also good to add datetime
+            nullable: true
+            go_type:
+              import: "gopkg.in/guregu/null.v4"
+              type: "Time"
